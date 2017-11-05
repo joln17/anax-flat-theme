@@ -1,0 +1,73 @@
+/**
+ * Modified style for responsive menu
+ */
+
+// General
+@navbarItemColor: #fff;
+@navbarItemHoverColor: #00c200;
+
+// Menu item current/selected
+@navbarItemSelectedColor: @navbarItemHoverColor;
+
+// The menu button clicked
+@navbarMenuButtonClickedColor: @navbarItemColor;
+
+// Max menu
+@maxMenuItemHoverColor: @navbarItemHoverColor;
+@maxButtonFontSize: 2em;
+@maxButtonColor: @navbarItemColor;
+@maxButtonHoverColor: @navbarItemHoverColor;
+
+/**
+ * Menu layout for the desktop variant, usually full width of browser.
+ */
+.rm-desktop {
+    li {
+        // Selected/current menu item
+        &.rm-selected-parent,  // For submenu
+        &.rm-selected,
+        &.selected-parent, // for selected descendants
+        &.selected {
+            color: @navbarItemSelectedColor;
+            text-decoration: underline;
+        }
+
+        &.rm-selected-parent a,  // For submenu
+        &.rm-selected a,
+        &.selected-parent a, // for selected descendants
+        &.selected a {
+            color: @navbarItemSelectedColor;
+        }
+    }
+}
+
+/**
+ * Menu layout for the max variant, for mobile screens and complete menues.
+ * Swipe from right by default.
+ */
+.rm-max {
+    // Show the button menu
+    .rm-small {
+        .rm-button:hover {
+            color: @maxButtonHoverColor;
+        }
+    }
+
+    // Customize the mobile menu, hide by default
+    .rm-mobile {
+        a:hover {
+            color: @maxMenuItemHoverColor;
+        }
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Media queries
+ */
+@media screen and (min-width: 640px) {
+    .rm-max {
+        .rm-small {
+            display: none;
+        }
+    }
+}

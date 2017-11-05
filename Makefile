@@ -51,7 +51,7 @@ LESSC     := $(NPMBIN)/lessc
 
 
 
-# target: help               - Displays help.
+# target: help                    - Displays help.
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
@@ -62,7 +62,7 @@ help:
 
 
 
-# target: prepare-build      - Clear and recreate the build directory.
+# target: prepare-build           - Clear and recreate the build directory.
 .PHONY: prepare-build
 prepare-build:
 	@$(call HELPTEXT,$@)
@@ -70,7 +70,7 @@ prepare-build:
 
 
 
-# target: clean              - Remove all generated files.
+# target: clean                   - Remove all generated files.
 .PHONY:  clean
 clean:
 	@$(call HELPTEXT,$@)
@@ -79,7 +79,7 @@ clean:
 
 
 
-# target: clean-all          - Remove all installed files.
+# target: clean-all               - Remove all installed files.
 .PHONY:  clean-all
 clean-all: clean
 	@$(call HELPTEXT,$@)
@@ -87,14 +87,14 @@ clean-all: clean
 
 
 
-# target: check              - Check installed tools.
+# target: check                   - Check installed tools.
 .PHONY:  check
 check: npm-version
 	@$(call HELPTEXT,$@)
 
 
 
-# target: less               - Compile and minify the stylesheet(s).
+# target: less                    - Compile and minify the stylesheet(s).
 .PHONY: less
 less: prepare-build
 	@$(call HELPTEXT,$@)
@@ -106,7 +106,7 @@ less: prepare-build
 
 
 
-# target: less-install       - Installing the stylesheet(s).
+# target: less-install            - Installing the stylesheet(s).
 .PHONY: less-install
 less-install: less
 	@$(call HELPTEXT,$@)
@@ -115,7 +115,7 @@ less-install: less
 
 
 
-# target: less-lint          - Lint the less stylesheet(s).
+# target: less-lint               - Lint the less stylesheet(s).
 .PHONY: less-lint
 less-lint: less
 	@$(call HELPTEXT,$@)
@@ -128,14 +128,14 @@ less-lint: less
 
 
 
-# target: test               - Execute all tests.
+# target: test                    - Execute all tests.
 .PHONY: test
 test: less-lint
 	@$(call HELPTEXT,$@)
 
 
 
-# target: update             - Update codebase including submodules.
+# target: update                  - Update codebase including submodules.
 .PHONY: update
 update:
 	@$(call HELPTEXT,$@)
@@ -144,9 +144,9 @@ update:
 
 
 
-# target: npm-install        - Install npm development npm packages.
-# target: npm-update         - Update npm development npm packages.
-# target: npm-version        - Display version for each npm package.
+# target: npm-install             - Install npm development npm packages.
+# target: npm-update              - Update npm development npm packages.
+# target: npm-version             - Display version for each npm package.
 .PHONY: npm-installl npm-update npm-version
 npm-install: 
 	@$(call HELPTEXT,$@)
@@ -163,3 +163,23 @@ npm-version:
 	@$(call CHECK_VERSION, $(CSSLINT))
 	@$(call CHECK_VERSION, $(STYLELINT))
 	@$(call CHECK_VERSION, $(LESSC), | cut -d ' ' -f 2)
+
+# target: upgrade                 - Upgrade external LESS modules.
+.PHONY: upgrade
+upgrade: upgrade-normalize upgrade-responsive-menu
+	@$(call HELPTEXT,$@)
+
+# target: upgrade-normalize       - Upgrade LESS module - Normalize.
+.PHONY: upgrade-normalize
+upgrade-normalize:
+	@$(call HELPTEXT,$@)
+	npm update normalize.css
+	cp node_modules/normalize.css/normalize.css modules/normalize.less
+
+# target: upgrade-responsive-menu - Upgrade LESS module - Responsive menu
+.PHONY: upgrade-responsive-menu
+upgrade-responsive-menu:
+	@$(call HELPTEXT,$@)
+	npm update desinax-responsive-menu
+	cp node_modules/desinax-responsive-menu/src/less/responsive-menu.less modules/
+	cp node_modules/desinax-responsive-menu/src/js/responsive-menu.js js/
