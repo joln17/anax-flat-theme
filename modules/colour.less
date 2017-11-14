@@ -1,0 +1,52 @@
+@headerFooterBgColor: #131313;
+@headerFooterTextColor: #bbb;
+@headerFooterLinkColor: #fff;
+@headerFooterHoverColor: #00c200;
+@breadcrumbHoverColor: #00c200;
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.outer-wrap-header
+{
+    background-color: @headerFooterBgColor;
+}
+
+.site-logo-text {
+    a {
+        color: @headerFooterLinkColor;
+    }
+    a:hover {
+        color: @headerFooterHoverColor;
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list ul {
+    li a {
+        color: #000;
+    }
+    li a:hover {
+        color: @breadcrumbHoverColor;
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.outer-wrap-footer {
+    background-color: @headerFooterBgColor;
+}
+
+.footer {
+    color: @headerFooterTextColor;
+    a {
+        color: @headerFooterLinkColor;
+    }
+    a:hover {
+        color: @headerFooterHoverColor;
+    }
+}

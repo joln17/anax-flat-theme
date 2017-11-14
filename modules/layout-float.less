@@ -1,0 +1,163 @@
+
+@side-padding: 1.04166667%;
+
+.wrap-all {
+    min-width: 320px;
+}
+
+.inner-wrap {
+    .container();
+    max-width: 960px;
+    .showGrid(960px);
+}
+
+.row {
+    .row();
+}
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+
+.site-header {
+    position: relative;
+    .row(12);
+    //.column(12);
+    padding-top: 5px;
+    height: 60px;
+    .showGrid(960px);
+}
+
+.site-logo-text,
+.navbar2,
+.profile {
+    .column(4);
+    background-color: green;
+    opacity: .5;
+}
+
+
+/** --------------------------------------------------------------
+ *  Images
+ */
+
+.logo-1 {
+    position: absolute;
+    top: 70px;
+    left: -140px;
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
+.flash-wrap {
+    .column(12);
+    img {
+        max-width: 100%;
+    }
+}
+
+.img-float-left {
+    float: left;
+    margin: 0 10px 5px 0;
+    max-width: 50%;
+}
+
+.img-float-right {
+    float: right;
+    margin: 0 0 5px 10px;
+    max-width: 50%;
+}
+
+
+/** --------------------------------------------------------------
+ *  Content
+ */
+
+.outer-wrap-main {
+    margin-bottom: 30px;
+}
+
+.breadcrumb-wrap,
+.breadcrumb-list,
+.main,
+.article,
+.content,
+.after-main {
+    .column(12);
+}
+
+.next-previous {
+    .row(12);
+    .column(12);
+}
+
+.next {
+    .column(6);
+    float: right;
+    text-align: right;
+}
+
+.previous {
+    .column(6);
+}
+
+.sidebar {
+    .column(3);
+    padding-left: @side-padding;
+}
+
+.main.has-sidebar {
+    .column(9);
+}
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+
+.footer {
+    .column(12);
+    margin-top: 100px;
+    padding-bottom: 5px;
+}
+
+.footer-column-wrapper {
+    .row(12);
+}
+
+.footer-column {
+    .column(4);
+    background-color: green;
+    opacity: .5;
+    .block ul li {
+        margin-left: -20px;
+    }
+}
+
+.site-footer {
+    .column(12);
+    text-align: center;
+}
+
+
+/** --------------------------------------------------------------
+ *  Media queries
+ */
+@media screen and (max-width: 639px) {
+    .navbar2 {
+        display: none;
+    }
+    .site-logo-text {
+        .column(8);
+    }
+    .sidebar {
+        display: none;
+    }
+    .has-sidebar {
+        .column(12);
+    }
+}

@@ -1,0 +1,83 @@
+@import "typography-font-families.less";
+@import "typography-sizes.less";
+@import "typography-mixins.less";
+@import "typography-defaults.less";
+
+
+.inner-wrap-breadcrumb,
+.inner-wrap-main,
+.inner-wrap-after-main,
+.inner-wrap-footer {
+    .font();
+    .typographyHeadings();
+    .typographyTextElements();
+    .typographyCodeElements();
+    .typographyListElements();
+    .typographyTableElements();
+    .typographyOtherElements();
+}
+
+
+.site-header li {
+    font-size: @fontSizeBody;
+    line-height: @lineHeight;
+}
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-logo-text {
+    font-size: 2em;
+    a {
+        text-decoration: none;
+    }
+}
+
+.site-logo-text,
+.navbar2,
+.profile {
+    font-family: @fontFamilyHeader;
+}
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list ul {
+    list-style-type: none;
+    li {
+        .fontSize(.875em);
+        font-weight: bold;
+    }
+    li::after {
+        content: " » ";
+        white-space: pre;
+    }
+    li a {
+        text-decoration: none;
+    }
+    li a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  After main
+ */
+.after-main .content {
+    border-top: 1px solid @colorH1BorderBottom;
+}
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.footer {
+    h5 {
+        .fontSize(.875em);
+        font-family: @fontFamilyFooter;
+    }
+    p, li {
+        .fontSize(.75em);
+        font-family: @fontFamilyFooter;
+    }
+}
