@@ -25,11 +25,16 @@
         font-weight: normal;
 
         border-bottom: @borderSizeH1 solid @colorH1BorderBottom;
+        margin-top: @magicNumber - @borderSizeH1;
         margin-bottom: @magicNumber - @borderSizeH1;
 
         // If header below h1, then assume larger margin top
-        & ~ h1,
-        & ~ h2,
+        & ~ h1 {
+            margin-top: @magicNumber * 2 - @borderSizeH1;
+        }
+        & ~ h2 {
+            margin-top: @magicNumber * 2 - @borderSizeH2;
+        }
         & ~ h3,
         & ~ h4,
         & ~ h5,
@@ -40,7 +45,7 @@
 
         // Single margin when subheader follows directly
         & + h2 {
-            margin-top: @magicNumber;
+            margin-top: @magicNumber - @borderSizeH2;
         }
     }
 
@@ -48,7 +53,7 @@
         .fontSize(@fontSizeH2);
         font-weight: normal;
 
-        margin-top: @magicNumber * 2;
+        margin-top: @magicNumber * 2 - @borderSizeH2;
         margin-bottom: @magicNumber - @borderSizeH2;
 
         border-bottom: @borderSizeH2 solid @colorH2BorderBottom;
@@ -377,7 +382,7 @@
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
  
         margin-top: 1.5 * @magicNumber - 1px;
-        margin-bottom: 1.5 * @magicNumber;
+        margin-bottom: 1.5 * @magicNumber - 1px;
 
         &:after {
             content: "§";
