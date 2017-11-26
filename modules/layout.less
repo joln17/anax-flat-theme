@@ -5,6 +5,9 @@
 @gridImgV: "../img/grid/grid960x12x60x20.png";
 @gridImgH: "../img/grid/horisontal-grid-24.png";
 
+html {
+    overflow-y: scroll;
+}
 
 .wrap-all {
     min-width: @minWidth;
@@ -105,6 +108,10 @@ html.hgrid .inner-wrap {
     margin: 0 0 5px 10px;
 }
 
+.route-analysis-colorscheme .article img {
+    width: 100%;
+}
+
 
 /** --------------------------------------------------------------
  *  Content
@@ -181,16 +188,31 @@ html.hgrid .inner-wrap {
 /** --------------------------------------------------------------
  *  Media queries
  */
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 780px) {
     .site-logo-text {
-        .column(4);
+        .column(3);
     }
     .navbar2 {
-        .column(8);
+        .column(9);
     }
     .profile {
         display: none;
     }
+}
+
+@media screen and (max-width: 779px) {
+    .site-logo-text {
+        .column(9);
+    }
+    .navbar2 {
+        display: none;
+    }
+    .profile {
+        .column(3);
+    }
+}
+
+@media screen and (min-width: 640px) {
     .main {
         .column(9);
         .push(2);
@@ -201,15 +223,6 @@ html.hgrid .inner-wrap {
 }
 
 @media screen and (max-width: 639px) {
-    .site-logo-text {
-        .column(8);
-    }
-    .navbar2 {
-        display: none;
-    }
-    .profile {
-        .column(4);
-    }
     .sidebar {
         display: none;
     }

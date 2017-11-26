@@ -1,0 +1,27 @@
+@bodyBgColor: #091227;
+@bodyColor: #fff;
+@mainLinkColor: #fff;
+@mainHoverColor: #a38a58;
+@mainTextColor: #fff;
+@mainBgColor: #000207;
+@colorH1BorderBottom: #ccc;
+@colorH2BorderBottom: #ccc;
+@bgColorCodeInline: #a38a58;
+@bgColorCodeBlock: #a38a58;
+
+
+.inner-wrap-main,
+.inner-wrap-after-main {
+    :link {
+        color: @mainHoverColor;
+    }
+    :visited {
+        color: @mainHoverColor;
+    }
+    hr {
+        background-image: linear-gradient(to right,rgba(1,1,1,0),rgba(255,255,255,.75),rgba(1,1,1,0));
+    }
+    hr::after {
+        color: @mainTextColor;
+    }
+}

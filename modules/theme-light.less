@@ -1,8 +1,9 @@
 @bodyBgColor: #fff;
-@mainLinkColor: #fff;
-@mainHoverColor: #00c200;
-@mainTextColor: #bbb;
-@mainBgColor: #131313;
+@bodyColor: #000;
+@mainLinkColor: #000;
+@mainHoverColor: #666;
+@mainTextColor: #000;
+@mainBgColor: #eee;
 
 @navbarItemColor: @mainLinkColor;
 @navbarItemHoverColor: @mainHoverColor;
@@ -13,7 +14,7 @@
 @headerFooterTextColor: @mainTextColor;
 @headerFooterLinkColor: @mainLinkColor;
 @headerFooterHoverColor: @mainHoverColor;
-@breadcrumbColor: #000;
+@breadcrumbColor: @mainLinkColor;
 @breadcrumbHoverColor: @mainHoverColor;
 @bgColorHr: @bodyBgColor;
 
@@ -23,6 +24,7 @@ html {
 
 body {
     background-color: @bodyBgColor;
+    color: @bodyColor;
 }
 
 /** --------------------------------------------------------------
