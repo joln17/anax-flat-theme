@@ -42,6 +42,13 @@ html.hgrid .inner-wrap {
     .row();
 }
 
+.article {
+    h1, h2, h3, h4, h5, h6,
+    .meta-footer {
+        clear: both;
+    }
+}
+
 /** --------------------------------------------------------------
  *  Header
  */
@@ -108,8 +115,9 @@ html.hgrid .inner-wrap {
     margin: 0 0 5px 10px;
 }
 
-.route-analysis-colorscheme .article img {
-    width: 100%;
+.route-analysis-colorscheme .article img,
+.route-analysis-speed-and-usability .article img, {
+    max-width: 100%;
 }
 
 
@@ -148,6 +156,12 @@ html.hgrid .inner-wrap {
     padding-left: @side-padding;
 }
 
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-list-item {
+    overflow: auto;
+}
 
 /** --------------------------------------------------------------
  *  After main
