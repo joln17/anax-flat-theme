@@ -1,0 +1,26 @@
+@borderSizeH1: 3px;
+@colorH1BorderBottom: @mainTextColor;
+@borderSizeH2: 3px;
+@colorH2BorderBottom: @mainTextColor;
+
+.wrap-all,
+.outer-wrap-header,
+.outer-wrap-footer {
+    background: linear-gradient(@mainBgColor, @bodyBgColor, @mainBgColor);
+}
+.outer-wrap-header,
+.after-main .content,
+.outer-wrap-footer {
+    border-top: 5px solid @mainTextColor;
+    border-bottom: 5px solid @mainTextColor;
+}
+
+.flash-wrap img,
+.breadcrumb-wrap {
+    border-bottom: 3px solid @mainTextColor;
+}
+
+.after-main .content {
+    border-top: 3px solid @mainTextColor;
+    border-bottom: 3px solid @mainTextColor;
+}

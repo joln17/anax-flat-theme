@@ -115,24 +115,20 @@ html.hgrid .inner-wrap {
     margin: 0 0 5px 10px;
 }
 
-.route-analysis-colorscheme .article img,
-.route-analysis-speed-and-usability .article img, {
-    max-width: 100%;
-}
-
 
 /** --------------------------------------------------------------
  *  Content
  */
 
-.outer-wrap-main {
+.main {
     margin-bottom: @magicNumber * 3;
 }
 
 .breadcrumb-wrap,
 .breadcrumb-list,
 .article,
-.content {
+.content,
+.blog-list {
     .column(12);
 }
 
@@ -140,6 +136,10 @@ html.hgrid .inner-wrap {
     display: block;
     margin: 0 @side-padding;
     .clearfix();
+}
+
+.article + .next-previous {
+    margin-top: @magicNumber;
 }
 
 .next {

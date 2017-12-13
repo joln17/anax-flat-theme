@@ -1,0 +1,61 @@
+@mainHoverColor: #00c200;
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
+@fontFamilyHeadings: "Zilla Slab Highlight", cursive;
+
+
+body {
+    background: url(../img/background-perspective.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.wrap-all {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.outer-wrap-flash {
+    height: @magicNumber * 6;
+}
+
+.logo-1,
+.flash-wrap,
+.breadcrumb-list ul {
+    display: none;
+}
+
+.inner-wrap-main {
+    p {
+        text-align: justify;
+    }
+    h1,
+    h2 {
+        text-align: center;
+    }
+}
+
+.inner-wrap-main img {
+    box-shadow: 0 10px 22px 2px #000;
+}
+
+.inner-wrap-after-main,
+.footer-column {
+    text-align: center;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 640px) {
+    .sidebar {
+        display: none;
+    }
+    .main,
+    .main.has-sidebar {
+        .column(10);
+        .push(1);
+    }
+}
